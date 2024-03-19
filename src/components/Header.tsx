@@ -5,9 +5,6 @@ import { FaYoutube } from "react-icons/fa";
 
 
 
-
-
-
 const Header = () => {
   return (
    
@@ -20,7 +17,7 @@ const Header = () => {
         </div>
         <div className='flex flex-row w-6/12 gap-4 items-center justify-end mr-40 text-white'>
             <a href='#'>Login</a>
-            <a href='#'>Contact</a>
+            <a href='https://wa.me/+6285724919584'>Contact</a>
         </div>
     </div>
   )
