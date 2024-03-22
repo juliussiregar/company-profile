@@ -7,14 +7,14 @@ const Skema_Sertifikasi = () => {
   const [showPOM, setShowPOM] = useState(false);
   const [showPOU, setShowPOU] = useState(false);
 
-  const toggleTable = (type) => {
+  const toggleTable = (type :any) => {
     if (type === 'POP') setShowPOP(!showPOP);
     if (type === 'POM') setShowPOM(!showPOM);
     if (type === 'POU') setShowPOU(!showPOU);
   };
 
   return (
-    <div className='w-screen h-screen bg-white flex flex-col items-center'>
+    <div className='w-screen h-[80vh] bg-white flex flex-col items-center'>
       <div className='ml-32 mr-32 text-center font-bold text-6xl mt-8 mb-12'>SKEMA SERTIFIKASI</div>
 
       <div className="mt-8 ml-8 mr-8 overflow-x-auto">

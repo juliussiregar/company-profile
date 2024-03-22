@@ -3,21 +3,20 @@ import About_us from "@/app/about-us/page";
 
 import Hero from "@/components/Hero";
 import Skema_Sertifikasi from "./skema-sertifikasi/page";
+import Our_Team from "./our-team/page";
+import History from "./history/page";
 
 
 
 export default function Home() {
   return (
     <div>
-    <div>
+   
     <Hero />
-    </div>
-    <div>
     <About_us />
-    </div>
-    <div>
-      <Skema_Sertifikasi/>
-    </div>
+    <History />
+    <Skema_Sertifikasi/>
+    <Our_Team />
   </div>
   );
 }

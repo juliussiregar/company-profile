@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight } from "react-feather";
 import { motion } from "framer-motion";
 
 
-const AnimatedContent = ({ title, subtitle }) => {
+const AnimatedContent = ({ title, subtitle }:any) => {
   return (
     <motion.div
       className='absolute top-1/4 left-0 right-0 text-center'
@@ -47,7 +47,7 @@ const AnimatedContent = ({ title, subtitle }) => {
   );
 };
 
-const Carousel = ({ slides, titles, subtitles, autoSlide = false, autoSlideInterval = 3000 }) => {
+const Carousel = ({ slides, titles, subtitles, autoSlide = false, autoSlideInterval = 3000 }:any) => {
     const [curr, setCurr] = useState(0);
 
     const prev = () => setCurr(curr === 0 ? slides.length - 1 : curr - 1);
@@ -65,7 +65,7 @@ const Carousel = ({ slides, titles, subtitles, autoSlide = false, autoSlideInter
     return (
         <div className='overflow-hidden'>
             <div className='flex transition-transform ease-out duration-500' style={{ transform: `translateX(-${curr * 100}%)` }}>
-                {slides.map((slide, index) => (
+                {slides.map((slide : any, index : any ) => (
                     <div key={index} className='w-full flex-shrink-0 relative'>
                         <img src={slide} alt={`Slide ${index + 1}`} style={{ filter: 'brightness(75%)' }}/>
                         <AnimatedContent
@@ -85,7 +85,7 @@ const Carousel = ({ slides, titles, subtitles, autoSlide = false, autoSlideInter
             </div>
             <div className=' bottom-20 right-0 left-0'>
                 <div className='flex items-center justify-center gap-2'>
-                    {slides.map((_, i) => (
+                    {slides.map((_ : any, i :any) => (
                         <div
                             key={i}
                             className={`transition-all w-3 h-3 bg-white rounded-full ${curr === i ? "p-4" : "bg-opacity-50"}`}
@@ -130,7 +130,7 @@ const Carousel = ({ slides, titles, subtitles, autoSlide = false, autoSlideInter
             </div>
             <div className='absolute bottom-20 right-0 left-0'>
                 <div className='flex items-center justify-center gap-2'>
-                    {slides.map((_, i) => (
+                    {slides.map((_ :any, i :any) => (
                         <div
                             key={i}
                             className={`transition-all w-3 h-3 bg-white rounded-full ${curr === i ? "p-4" : "bg-opacity-50"}`}
