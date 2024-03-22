@@ -20,7 +20,7 @@ const Skema_Sertifikasi = () => {
       <div className="mt-8 ml-8 mr-8 overflow-x-auto">
         {/* Button untuk POP */}
         <div className="mb-12">
-          <button onClick={() => toggleTable('POP')} className={`font-semibold bg-${showPOP ? 'blue' : 'gray'}-500 text-white px-4 py-2 rounded hover:bg-${showPOP ? 'blue' : 'gray'}-600 focus:outline-none flex justify-between items-center w-full`}>
+        <button onClick={() => toggleTable('POP')} className={`font-semibold text-white px-4 py-2 rounded focus:outline-none flex justify-between items-center w-full ${showPOP ? 'bg-blue-500 hover:bg-blue-600' : 'bg-gray-500 hover:bg-gray-600'}`}>
             <span>Pengawas Operasional Pertama (POP) di Bidang Pertambangan Mineral dan Batubara</span>
             <BsChevronDown className={`ml-2 transition-transform duration-300 transform ${showPOP ? 'rotate-180' : 'rotate-0'}`} />
           </button>
@@ -48,7 +48,7 @@ const Skema_Sertifikasi = () => {
 
         {/* Button untuk POM */}
         <div className="mb-12">
-          <button onClick={() => toggleTable('POM')} className={`font-semibold bg-${showPOM ? 'green' : 'gray'}-500 text-white px-4 py-2 rounded hover:bg-${showPOM ? 'green' : 'gray'}-600 focus:outline-none flex justify-between items-center w-full`}>
+        <button onClick={() => toggleTable('POM')} className={`font-semibold text-white px-4 py-2 rounded focus:outline-none flex justify-between items-center w-full ${showPOM ? 'bg-green-500 hover:bg-green-600' : 'bg-gray-500 hover:bg-gray-600'}`}>
             <span>Pengawas Operasional Madya (POM) di Bidang Pertambangan Mineral dan Batubara</span>
             <BsChevronDown className={`ml-2 transition-transform duration-300 transform ${showPOM ? 'rotate-180' : 'rotate-0'}`} />
           </button>
@@ -76,7 +76,7 @@ const Skema_Sertifikasi = () => {
 
         {/* Button untuk POU */}
         <div>
-          <button onClick={() => toggleTable('POU')} className={`font-semibold bg-${showPOU ? 'yellow' : 'gray'}-500 text-white px-4 py-2 rounded hover:bg-${showPOU ? 'yellow' : 'gray'}-600 focus:outline-none flex justify-between items-center w-full`}>
+        <button onClick={() => toggleTable('POU')} className={`font-semibold text-white px-4 py-2 rounded focus:outline-none flex justify-between items-center w-full ${showPOU ? 'bg-yellow-500 hover:bg-yellow-600' : 'bg-gray-500 hover:bg-gray-600'}`}>
             <span>Pengawas Operasional Utama (POU) di Bidang Pertambangan Mineral dan Batubara</span>
             <BsChevronDown className={`ml-2 transition-transform duration-300 transform ${showPOU ? 'rotate-180' : 'rotate-0'}`} />
           </button>

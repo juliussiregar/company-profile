@@ -59,8 +59,8 @@ const Carousel = ({ slides, titles, subtitles, autoSlide = false, autoSlideInter
             next();
         }, autoSlideInterval);
 
-        return () => clearInterval(slideInterval);
-    }, [curr]); // Tambahkan curr ke dalam array dependencies
+        return () => clearInterval(slideInterval); 
+    }, [curr]); 
 
     return (
         <div className='overflow-hidden'>
