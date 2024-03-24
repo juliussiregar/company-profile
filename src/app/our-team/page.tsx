@@ -1,18 +1,16 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import { FaFacebookF, FaGithub, FaInstagram } from 'react-icons/fa';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import { getOurTeam, Person } from '@/components/person';
+import Link from 'next/link';
 
 const OurTeam = () => {
   const [team, setTeam] = useState<Person[]>([]);
-  const { ref, inView } = useInView();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const teamData = await getOurTeam(); 
+        const teamData = await getOurTeam();
         setTeam(teamData.results);
       } catch (error) {
         console.error('Error fetching team data:', error);
@@ -23,90 +21,49 @@ const OurTeam = () => {
   }, []);
 
   return (
-    <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={inView ? 'visible' : 'hidden'}
-      variants={{
-        visible: { opacity: 1, y: 0 },
-        hidden: { opacity: 0, y: 100 },
-      }}
-      transition={{ duration: 0.5 }}
-      className="w-full h-full bg-white flex flex-col items-center"
-    >
-      <h1 className="text-3xl font-semibold mb-6">OUR TEAM</h1>
-      <p className='text-lg italic mb-8 text-center'>"Alone we can do so little, together we can do so much." - <b>Helen Keller</b></p>
-      <div className="grid grid-cols-3 gap-4">
+    <div className="w-full h-auto bg-white flex flex-col items-center mt-14">
+      <div data-aos="zoom-out-right">
+        <h1 className=" font-semibold mb-6 sm:text-2xl xl:text-6xl md:text-4xl ">OUR TEAM</h1>
+      </div>
+      <div data-aos="zoom-out-left">
+        <p className='text-lg italic mb-8 text-center'>"Alone we can do so little, together we can do so much." - <b>Helen Keller</b></p>
+      </div>
+      <div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-32 mt-4 mb-20">
         {team.map((person, index) => (
-          <TeamMember key={index} person={person} index={index} />
+          <TeamMember key={index} person={person} />
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 };
 
-const jobTitles = ['Developer', 'Designer', 'Marketing Specialist', 'Project Manager', 'Content Creator'];
+const jobTitles = ['Content Creator', 'Project Manager', 'Marketing Specialist', 'Designer', 'Developer'];
 
-const TeamMember = ({ person, index }: { person: Person, index: number }) => {
-  const controls = useAnimation();
-  const { ref, inView } = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start('visible');
-    }
-  }, [controls, inView]);
-
+const TeamMember = ({ person }: { person: Person }) => {
   return (
-    <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={controls}
-      variants={{
-        visible: { opacity: 1, scale: 1 },
-        hidden: { opacity: 0, scale: 0.5 },
-      }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="flex flex-col items-center relative"
-    >
+    <div data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">
+
+    <div className="flex flex-col items-center relative">
       <div className="relative">
-        <motion.img
+        <img
           src={person.picture.medium}
           alt={`${person.name.first} ${person.name.last}`}
-          className="w-40 h-40 rounded-full mb-6 profile-image"
-          whileHover={{ filter: 'brightness(0.7)' }}
+          className="w-48 h-48 rounded-full mb-6 "
         />
-        {inView && (
-          <motion.div
-            className="absolute inset-0 flex items-center justify-center"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className="flex gap-2">
-              <motion.div whileHover={{ scale: 1.5 }}>
-                <FaGithub className="w-6 h-6 text-white" />
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.5 }}>
-                <FaInstagram className="w-6 h-6 text-white" />
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.5 }}>
-                <FaFacebookF className="w-6 h-6 text-white" />
-              </motion.div>
-            </div>
-          </motion.div>
-        )}
+        <div className="absolute inset-0 flex items-center justify-center -mb-28">
+          <div className="flex ">
+            <Link href='https://www.facebook.com/lsp.td/' className='icon w-8 h-8 text-white cursor-pointer transition duration-300 transform hover:scale-110 hover:text-blue-500'><FaFacebookF /></Link>
+            <Link href='https://www.instagram.com/lsp.td/?hl=en' className='icon w-8 h-8 text-white cursor-pointer transition duration-300 transform hover:scale-110 hover:text-blue-500'><FaInstagram /></Link>
+            <Link href='https://www.youtube.com/@LSPPmbEnergi-lz9jy' className='icon w-8 h-8 text-white cursor-pointer transition duration-300 transform hover:scale-110 hover:text-blue-500'><FaGithub /></Link>
+         </div>
+        </div>
       </div>
-      <motion.h2
-        className="text-lg font-semibold mb-2"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: index * 0.1 }}
-      >
-        {person.name.first} {person.name.last}
-      </motion.h2>
-      <p className="text-gray-600 mb-1">{jobTitles[index % jobTitles.length]}</p>
-    </motion.div>
+      <h2 className="text-lg font-bold mb-2">{person.name.first} {person.name.last}</h2>
+      <p className="text-gray-600 mb-1">{jobTitles[Math.floor(Math.random() * jobTitles.length)]}</p>
+    </div>
+    </div>
   );
 };
 

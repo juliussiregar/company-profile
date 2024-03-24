@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Header_bot from "@/components/Header_bot";
 import Footer_Pmbe from "@/components/Footer_pmbe";
+import { AOSInit } from '../components/aos' 
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,12 +20,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+
+      <AOSInit/>
       <body className={inter.className}>
       <Header />
       <Header_bot />
         {children}
         <Footer_Pmbe /> 
         </body>
+
     </html>
   );
 }
