@@ -2,6 +2,10 @@
 import React, { useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight } from "react-feather";
 import { motion } from "framer-motion";
+import Image from 'next/image';
+import profil1 from "../../public/profile1.png"
+import profil2 from "../../public/profile2.png"
+import Link from 'next/link';
 
 const AnimatedContent = ({ title, subtitle }:any) => {
   return (
@@ -41,7 +45,7 @@ const Carousel = ({ slides, titles, subtitles, autoSlide = false, autoSlideInter
       <div className='flex transition-transform ease-out duration-500' style={{ transform: `translateX(-${curr * 100}%)` }}>
         {slides.map((slide:any, index:any) => (
           <div key={index} className='w-full flex-shrink-0 relative'>
-            <img src={slide} alt={`Slide ${index + 1}`} className='w-full h-full object-cover' />
+            <Image src={slide} alt={`Slide ${index + 1}`} className='w-full h-full object-cover' />
             <AnimatedContent
               title={titles[index]}
               subtitle={subtitles[index]}
@@ -74,8 +78,8 @@ const Carousel = ({ slides, titles, subtitles, autoSlide = false, autoSlideInter
             transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
              >
             <div className="flex items-center gap-2">
-            <img
-            src="./profile1.png"
+            <Image
+            src={profil1}
             alt="Profile Picture"
             className="w-10 h-10 rounded-full border-2 border-[#F06B23]"
             />
@@ -89,7 +93,7 @@ const Carousel = ({ slides, titles, subtitles, autoSlide = false, autoSlideInter
             </div>
             </div>
             <div className="text-sm text-[#F06B23] mt-2">
-            "I highly recommend certification here, fast and responsive service and easy to understand."
+            I highly recommend certification here, fast and responsive service and easy to understand.
              </div>
             <a
             href="https://wa.me/+6285724919584"
@@ -119,8 +123,8 @@ const Carousel = ({ slides, titles, subtitles, autoSlide = false, autoSlideInter
             transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
              >
             <div className="flex items-center gap-2">
-            <img
-            src="./profile2.png"
+            <Image
+            src={profil2}
             alt="Profile Picture 2"
             className="w-10 h-10 rounded-full border-2 border-[#F06B23]"
             />
@@ -134,15 +138,15 @@ const Carousel = ({ slides, titles, subtitles, autoSlide = false, autoSlideInter
             </div>
             </div>
             <div className="text-sm text-[#F06B23] mt-2">
-            "I really like the LSP PMBE team because they are so friendly in serving our company's certification."
+            I really like the LSP PMBE team because they are so friendly in serving our companys certification.
              </div>
-            <a
+            <Link
             href="https://wa.me/+6285724919584"
             target="_blank"
             className="bg-[#F06B23] text-white py-1 px-3 rounded-full mt-4  hover:bg-opacity-80 flex justify-center items-center"
             >
             Contact Us
-            </a>
+            </Link>
             </motion.div>
             </div>
     </div>

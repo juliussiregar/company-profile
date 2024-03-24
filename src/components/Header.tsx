@@ -16,7 +16,7 @@ const Header = () => {
       </div>
       {/* Bagian kanan */}
       <div className='flex flex-row w-6/12 gap-4 items-center justify-end mr-40 text-white md:mr-8  sm:mr-8 '>
-        <a href='#' className='icon cursor-pointer transition duration-300 transform hover:scale-110 hover:text-blue-500'>Login</a>
+        <Link href='#' className='icon cursor-pointer transition duration-300 transform hover:scale-110 hover:text-blue-500'>Login</Link>
         <Link href='https://wa.me/+6285724919584' className='icon cursor-pointer transition duration-300 transform hover:scale-110 hover:text-blue-500'>Contact</Link>
       </div>
     </div>

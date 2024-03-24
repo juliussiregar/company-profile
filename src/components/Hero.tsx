@@ -1,11 +1,15 @@
 import Carousel from "../components/Carousel";
 import React from 'react';
+import gambar1 from "../../public/gambar1.jpg"
+import gambar2 from "../../public/gambar2.jpg"
+import gambar3 from "../../public/gambar3.jpg"
+import gambar4 from "../../public/gambar4.jpg"
 
 const slides = [
-    "./gambar1.jpg",
-    "./gambar2.jpg",
-    "./gambar3.jpg",
-    "./gambar4.jpg",
+    gambar1,
+    gambar2,
+    gambar3,
+    gambar4,
 ];
 
 const titles = [

@@ -2,6 +2,9 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { BsChevronDown } from 'react-icons/bs';
+import logobnsp1 from "../../../public/logo_bnsp.png"
+import logobnsp2 from "../../../public/logo_bnsp2.png"
+import Image from 'next/image';
 
 const Skema_Sertifikasi = () => {
     const [showPOP, setShowPOP] = useState(false);
@@ -116,14 +119,14 @@ const Skema_Sertifikasi = () => {
             <Link
                 href="https://wa.me/+6285724919584"
                 target="_blank"
-                className="bg-[#F06B23] mt-12 h-16 w-40 text-white py-1 px-3 rounded-full mt-4 inline-block hover:bg-opacity-80 flex justify-center items-center"
+                className="bg-[#F06B23] mt-12 h-16 w-40 text-white py-1 px-3 rounded-full  hover:bg-opacity-80 flex justify-center items-center"
             >
                 Contact Us
             </Link>
             <div data-aos="zoom-out-up">
                 <div className='flex flex-row mt-16 gap-20 mb-36'>
-                    <img src='./logo_bnsp.png' alt='logo bnsp sertifikasi' className='h-32' />
-                    <img src='./logo_bnsp2.png' alt='logo bnsp sertifikasi 2' className='h-32' />
+                    <Image src={logobnsp1} alt='logo bnsp sertifikasi' className='h-32 w-auto' />
+                    <Image src={logobnsp2} alt='logo bnsp sertifikasi 2' className='h-32 w-auto' />
                 </div>
             </div>
         </div>
