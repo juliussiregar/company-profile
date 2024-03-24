@@ -16,7 +16,7 @@ const Footer_pmbe = () => {
         </div>
         <div className='flex flex-row mt-4'>
           <div className=' flex flex-col'>
-            <Image className='lg:w-[150px] sm:w-[100px] mt-2 mb-4 cursor-pointer transition duration-300 transform hover:scale-110' src={logo} alt="Logo" />
+            <Image className='lg:w-[150px] sm:w-[100px] mt-2 mb-4 cursor-pointer transition duration-300 transform hover:scale-110' src={logo} alt="Logo" style={{ maxWidth: '100%' }}/>
             <p className='text-justify lg:text-sm sm:text-xs xl:w-[275px] lg:w-[200px] sm:w-[150px]'>Lembaga ini dibawah naungan BNSP yang bertanggung jawab melaksanakan sertifikasi
               kompetensi untuk profesi di bidang Pertambangan, Panas Bumi, Konservasi Energi dan Migas</p>
           </div>

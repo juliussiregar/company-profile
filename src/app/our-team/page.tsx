@@ -54,6 +54,7 @@ const TeamMember = ({ person }: { person: Person }) => {
             width={200} 
             height={200}
             className="w-48 h-48 rounded-full mb-6"
+            style={{ maxWidth: '100%' }}
           />
           <div className="absolute inset-0 flex items-center justify-center -mb-28">
             <div className="flex ">

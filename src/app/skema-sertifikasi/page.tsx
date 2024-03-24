@@ -125,8 +125,8 @@ const Skema_Sertifikasi = () => {
             </Link>
             <div data-aos="zoom-out-up">
                 <div className='flex flex-row mt-16 gap-20 mb-36'>
-                    <Image src={logobnsp1} alt='logo bnsp sertifikasi' className='h-32 w-auto' />
-                    <Image src={logobnsp2} alt='logo bnsp sertifikasi 2' className='h-32 w-auto' />
+                    <Image src={logobnsp1} alt='logo bnsp sertifikasi' className='h-32 w-auto' style={{ maxWidth: '100%' }}/>
+                    <Image src={logobnsp2} alt='logo bnsp sertifikasi 2' className='h-32 w-auto' style={{ maxWidth: '100%' }} />
                 </div>
             </div>
         </div>

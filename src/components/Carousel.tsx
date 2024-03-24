@@ -7,7 +7,7 @@ import profil1 from "../../public/profile1.png"
 import profil2 from "../../public/profile2.png"
 import Link from 'next/link';
 
-const AnimatedContent = ({ title, subtitle }:any) => {
+const AnimatedContent = ({ title, subtitle }: any) => {
   return (
     <div className='absolute top-1/4 left-0 right-0 text-center'>
       <h1 className='text-white font-bold text-6xl'>{title}</h1>
@@ -25,7 +25,7 @@ const AnimatedContent = ({ title, subtitle }:any) => {
   );
 };
 
-const Carousel = ({ slides, titles, subtitles, autoSlide = false, autoSlideInterval = 3000 }:any) => {
+const Carousel = ({ slides, titles, subtitles, autoSlide = false, autoSlideInterval = 3000 }: any) => {
   const [curr, setCurr] = useState(0);
 
   const prev = () => setCurr(curr === 0 ? slides.length - 1 : curr - 1);
@@ -43,9 +43,9 @@ const Carousel = ({ slides, titles, subtitles, autoSlide = false, autoSlideInter
   return (
     <div className='w-full h-screen overflow-hidden relative'>
       <div className='flex transition-transform ease-out duration-500' style={{ transform: `translateX(-${curr * 100}%)` }}>
-        {slides.map((slide:any, index:any) => (
+        {slides.map((slide: any, index: any) => (
           <div key={index} className='w-full flex-shrink-0 relative'>
-            <Image src={slide} alt={`Slide ${index + 1}`} className='w-full h-full object-cover' />
+            <Image src={slide} alt={`Slide ${index + 1}`} className='w-full h-full object-cover' style={{ maxWidth: '100%', maxHeight: '100%' }}/>
             <AnimatedContent
               title={titles[index]}
               subtitle={subtitles[index]}
@@ -62,7 +62,7 @@ const Carousel = ({ slides, titles, subtitles, autoSlide = false, autoSlideInter
         </button>
       </div>
       <div className='absolute bottom-20 left-0 right-0 flex items-center justify-center gap-2'>
-        {slides.map((_:any, i:any) => (
+        {slides.map((_: any, i: any) => (
           <div
             key={i}
             className={`transition-all w-3 h-3 bg-white rounded-full ${curr === i ? "p-4" : "bg-opacity-50"}`}
@@ -70,85 +70,93 @@ const Carousel = ({ slides, titles, subtitles, autoSlide = false, autoSlideInter
         ))}
       </div>
       <div className="absolute bottom-20 right-[-300px]">
-            <motion.div
-            className="bg-white p-3 rounded-lg border-2 border-[#F06B23]"
-            style={{ width: 'calc(50% - 20px)' }}
-            initial={{ opacity: 0, y: 100 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
-             >
-            <div className="flex items-center gap-2">
+        <motion.div
+          className="bg-white p-3 rounded-lg border-2 border-[#F06B23]"
+          style={{ width: 'calc(50% - 20px)' }}
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+        >
+          <div className="flex items-center gap-2">
             <Image
-            src={profil1}
-            alt="Profile Picture"
-            className="w-10 h-10 rounded-full border-2 border-[#F06B23]"
+              src={profil1}
+              alt="Profile Picture 2"
+              layout="fixed" 
+              width={40} 
+              height={40} 
+              style={{ maxWidth: '100%', height: 'auto' }}
+              className="rounded-full border-2 border-[#F06B23]"
             />
             <div>
-             <p className="text-[#F06B23] text-base font-semibold">
-             Hendra Wijaya
-            </p>
-            <p className="text-base text-[#F06B23] font-semibold">
-            PT. Minerba Sejahtera
-             </p>
+              <p className="text-[#F06B23] text-base font-semibold">
+                Hendra Wijaya
+              </p>
+              <p className="text-base text-[#F06B23] font-semibold">
+                PT. Minerba Sejahtera
+              </p>
             </div>
-            </div>
-            <div className="text-sm text-[#F06B23] mt-2">
+          </div>
+          <div className="text-sm text-[#F06B23] mt-2">
             I highly recommend certification here, fast and responsive service and easy to understand.
-             </div>
-            <a
+          </div>
+          <a
             href="https://wa.me/+6285724919584"
             target="_blank"
             className="bg-[#F06B23] text-white py-1 px-3 rounded-full mt-4  hover:bg-opacity-80 flex justify-center items-center"
-            >
+          >
             Contact Us
-            </a>
-            </motion.div>
-            </div>
-            <div className='absolute bottom-20 right-0 left-0'>
-                <div className='flex items-center justify-center gap-2'>
-                    {slides.map((_ :any, i :any) => (
-                        <div
-                            key={i}
-                            className={`transition-all w-3 h-3 bg-white rounded-full ${curr === i ? "p-4" : "bg-opacity-50"}`}
-                        />
-                    ))}
-                </div>
-            </div>
-            <div className="absolute bottom-20 right-4">
-            <motion.div
-            className="bg-white p-3 rounded-lg border-2 border-[#F06B23]"
-            style={{ width: 'calc(50% - 20px)' }}
-            initial={{ opacity: 0, y: 100 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
-             >
-            <div className="flex items-center gap-2">
+          </a>
+        </motion.div>
+      </div>
+      <div className='absolute bottom-20 right-0 left-0'>
+        <div className='flex items-center justify-center gap-2'>
+          {slides.map((_: any, i: any) => (
+            <div
+              key={i}
+              className={`transition-all w-3 h-3 bg-white rounded-full ${curr === i ? "p-4" : "bg-opacity-50"}`}
+            />
+          ))}
+        </div>
+      </div>
+      <div className="absolute bottom-20 right-4">
+        <motion.div
+          className="bg-white p-3 rounded-lg border-2 border-[#F06B23]"
+          style={{ width: 'calc(50% - 20px)' }}
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+        >
+          <div className="flex items-center gap-2">
             <Image
-            src={profil2}
-            alt="Profile Picture 2"
-            className="w-10 h-10 rounded-full border-2 border-[#F06B23]"
+              src={profil2}
+              alt="Profile Picture 2"
+              layout="fixed" 
+              width={40} 
+              height={40} 
+              style={{ maxWidth: '100%', height: 'auto' }}
+              className="rounded-full border-2 border-[#F06B23]"
             />
             <div>
-             <p className="text-[#F06B23] text-base font-semibold">
-             Bobby Santoso
-            </p>
-            <p className="text-base text-[#F06B23] font-semibold">
-            PT. Mineral Nusantara Jaya
-             </p>
+              <p className="text-[#F06B23] text-base font-semibold">
+                Bobby Santoso
+              </p>
+              <p className="text-base text-[#F06B23] font-semibold">
+                PT. Mineral Nusantara Jaya
+              </p>
             </div>
-            </div>
-            <div className="text-sm text-[#F06B23] mt-2">
+          </div>
+          <div className="text-sm text-[#F06B23] mt-2">
             I really like the LSP PMBE team because they are so friendly in serving our companys certification.
-             </div>
-            <Link
+          </div>
+          <Link
             href="https://wa.me/+6285724919584"
             target="_blank"
             className="bg-[#F06B23] text-white py-1 px-3 rounded-full mt-4  hover:bg-opacity-80 flex justify-center items-center"
-            >
+          >
             Contact Us
-            </Link>
-            </motion.div>
-            </div>
+          </Link>
+        </motion.div>
+      </div>
     </div>
   );
 };

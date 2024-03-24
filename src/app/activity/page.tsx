@@ -15,15 +15,15 @@ const Activity = () => {
             </div>
             <div className='flex 2xl:flex-col 2xl:items-center 2xl:justify-start lg:flex-row lg:justify-center lg:gap-8 sm:flex-col sm:items-center'>
                 <div data-aos="fade-left" className='flex 2xl:flex-row mt-24 2xl:gap-8 lg:flex-col lg:gap-8 sm:flex-col sm:gap-8'>
-                    <Image src={Activity_1} alt='Aktifitas_1' className='2xl:w-full 2xl:h-[300px] rounded-2xl xl:h:-[200px] xl:w-[400px] lg:w-[350px] sm:w-[350px]'></Image>
-                    <Image src={Activity_2} alt='Aktifitas_2' className='2xl:w-full 2xl:h-[300px] rounded-2xl xl:h:-[200px] xl:w-[400px] lg:w-[350px] sm:w-[350px]'></Image>
-                    <Image src={Activity_3} alt='Aktifitas_3' className='2xl:w-full 2xl:h-[300px] rounded-2xl xl:h:-[200px] xl:w-[400px] lg:w-[350px] sm:w-[350px]'></Image>
+                    <Image src={Activity_1} alt='Aktifitas_1' className='2xl:w-full 2xl:h-[300px] rounded-2xl xl:h:-[200px] xl:w-[400px] lg:w-[350px] sm:w-[350px]' style={{ maxWidth: '100%' }}></Image>
+                    <Image src={Activity_2} alt='Aktifitas_2' className='2xl:w-full 2xl:h-[300px] rounded-2xl xl:h:-[200px] xl:w-[400px] lg:w-[350px] sm:w-[350px]' style={{ maxWidth: '100%' }}></Image>
+                    <Image src={Activity_3} alt='Aktifitas_3' className='2xl:w-full 2xl:h-[300px] rounded-2xl xl:h:-[200px] xl:w-[400px] lg:w-[350px] sm:w-[350px]' style={{ maxWidth: '100%' }}></Image>
 
                 </div>
                 <div data-aos="fade-right" className='flex 2xl:flex-row lg:mt-24 2xl:gap-8 lg:flex-col lg:gap-8 sm:flex-col sm:gap-8 sm:mt-8'>
-                    <Image src={Activity_4} alt='Aktifitas_4' className='2xl:w-full 2xl:h-[300px] rounded-2xl xl:h:-[200px] xl:w-[400px] lg:w-[350px] sm:w-[350px]'></Image>
-                    <Image src={Activity_5} alt='Aktifitas_5' className='2xl:w-full 2xl:h-[300px] rounded-2xl xl:h:-[200px] xl:w-[400px] lg:w-[350px] sm:w-[350px]'></Image>
-                    <Image src={Activity_6} alt='Aktifitas_6' className='2xl:w-full 2xl:h-[300px] rounded-2xl xl:h:-[200px] xl:w-[400px] lg:w-[350px] sm:w-[350px]'></Image>
+                    <Image src={Activity_4} alt='Aktifitas_4' className='2xl:w-full 2xl:h-[300px] rounded-2xl xl:h:-[200px] xl:w-[400px] lg:w-[350px] sm:w-[350px]' style={{ maxWidth: '100%' }}></Image>
+                    <Image src={Activity_5} alt='Aktifitas_5' className='2xl:w-full 2xl:h-[300px] rounded-2xl xl:h:-[200px] xl:w-[400px] lg:w-[350px] sm:w-[350px]' style={{ maxWidth: '100%' }}></Image>
+                    <Image src={Activity_6} alt='Aktifitas_6' className='2xl:w-full 2xl:h-[300px] rounded-2xl xl:h:-[200px] xl:w-[400px] lg:w-[350px] sm:w-[350px]' style={{ maxWidth: '100%' }}></Image>
                 </div>
             </div>
         </div>

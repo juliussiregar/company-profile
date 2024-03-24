@@ -11,7 +11,7 @@ const AboutUs = () => {
     <div className='w-screen bg-white flex flex-col items-center'>
       <div className='mt-24 mb-8 text-center'>
         <div data-aos="zoom-out-up">
-          <Image src={logo} alt='logo pmbe' className='md:h-52 w-auto mb-4 mx-auto sm:h-36' />
+          <Image src={logo} alt='logo pmbe' className='md:h-52 w-auto mb-4 mx-auto sm:h-36' style={{ maxWidth: '100%' }} />
         </div>
         <div data-aos="fade-right"
           data-aos-offset="300"
@@ -33,17 +33,17 @@ const AboutUs = () => {
 
           <div className='flex justify-center mt-4 lg:gap-28 '>
             <div className='mx-4 text-center'>
-              <Image src={asesor} alt='Logo 1' className='md:w-48 md:h-48 mx-auto rounded-full sm:w-28 sm:h-28' />
+              <Image src={asesor} alt='Logo 1' className='md:w-48 md:h-48 mx-auto rounded-full sm:w-28 sm:h-28' style={{ maxWidth: '100%' }} />
               <b className='mt-2 md:text-xl sm:text-lg'>Asesor</b>
               <p className='md:text-base sm:text-sm'>Dengan Asesor yang telah tersertifikasi.</p>
             </div>
             <div className='mx-4 text-center'>
-              <Image src={skema} alt='Logo 2' className='md:w-48 md:h-48 mx-auto rounded-full sm:w-28 sm:h-28' />
+              <Image src={skema} alt='Logo 2' className='md:w-48 md:h-48 mx-auto rounded-full sm:w-28 sm:h-28' style={{ maxWidth: '100%' }} />
               <b className='mt-2 md:text-xl sm:text-lg'>Skema</b>
               <p className='md:text-base sm:text-sm'>Terdapat banyak pilihan tingkatan skema.</p>
             </div>
             <div className='mx-4 text-center '>
-              <Image src={tuk} alt='Logo 3' className='md:w-48 md:h-48 mx-auto rounded-full sm:w-28 sm:h-28' />
+              <Image src={tuk} alt='Logo 3' className='md:w-48 md:h-48 mx-auto rounded-full sm:w-28 sm:h-28' style={{ maxWidth: '100%' }} />
               <b className='mt-2 md:text-xl sm:text-lg'>TUK</b>
               <p className="md:text-base sm:text-sm">TEMPAT UJI KOMPETENSI (TUK) Yang bersertifikat</p>
             </div>
@@ -78,7 +78,7 @@ const AboutUs = () => {
 
         <div className='items-center justify-center flex flex-col'>
           <h1 className='text-center xl:text-5xl  mt-32 font-bold text  mb-12 md:text-4xl sm:text-3xl '>Struktur Organisasi LSP PMBE </h1>
-          <Image src={struktur} alt='struktur-organisasi' className='w-auto xl:h-[400px] mt-2 mb-32 justify-center md:h-[300px] sm:h-[255x]'></Image>
+          <Image src={struktur} alt='struktur-organisasi' className='w-auto xl:h-[400px] mt-2 mb-32 justify-center md:h-[300px] sm:h-[255x]' style={{ maxWidth: '100%' }}></Image>
         </div>
       </div>
     </div>
